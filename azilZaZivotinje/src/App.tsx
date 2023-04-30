@@ -16,16 +16,25 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [displayGeneral, setDisplayGeneral] = useState(false);
   const [displayPopis, setPopis] = useState(false)
+  const [displayUnos, setUnos] = useState(false)
 
   const handleInfoClick = () => {
     setDisplayGeneral(true);
     setPopis(false);
+    setUnos(false);
   };
 
   const handlePopisClick = () => {
     setDisplayGeneral(false);
     setPopis(true);
+    setUnos(false);
   };
+
+  const handleUnosClick = () => {
+    setUnos(true);
+    setDisplayGeneral(false);
+    setPopis(false);
+  }
 
   const handleSwitch = () => {
     setIsAdmin(!isAdmin);
@@ -43,7 +52,7 @@ function App() {
             <li><a href="#" onClick={handlePopisClick}>Popis</a></li>
             <li><a href="#">Donacije</a></li>
             <li><a href="#">Obavijesti</a></li>
-            <li><a href="#">Unos</a></li>
+            <li><a href="#" onClick={handleUnosClick}>Unos</a></li>
           </ul>
           <div className="switch">
             <p className='switchText'>User</p>
@@ -62,7 +71,9 @@ function App() {
       </nav>
       <br></br>
       {displayGeneral && <Info />}
-      {displayPopis && <Popis />}
+      {displayPopis && <Popis isAdmin={isAdmin} />}
+      {displayUnos && !isAdmin && <h4>Trebate biti admin za otključati unos.</h4>}
+      {displayUnos && isAdmin && <UnosForma/>}
       
     </>
   );

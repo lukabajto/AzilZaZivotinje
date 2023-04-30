@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 
 function UnosForma(props) {
-
+    const [vrste, postaviVrste] = useState([])
     const [formaPodaci, postaviPodatke] = useState({
         ime: "",
         vrsta: "",
@@ -12,6 +12,14 @@ function UnosForma(props) {
         pregled: "",
         udomljen: false
     })
+    const [uspjesnoUneseno, postaviTekstUneseno] = useState(false)
+
+    useEffect(() => {
+        axios
+          .get("http://localhost:3001/vrste")
+          .then(rez => postaviVrste(rez.data))
+          .catch(err => console.log(err.message));
+      }, []);
 
     const saljiPodatke = event => {
         event.preventDefault();
@@ -22,6 +30,7 @@ function UnosForma(props) {
         axios.post('http://localhost:3001/zivotinje', zaSlanje)
             .then(rez => {
                 props.dodaj(stanje => [...stanje, rez.data])
+                postaviTekstUneseno(true);
             })
     }
 
@@ -44,6 +53,7 @@ function UnosForma(props) {
 
     return (
             <form onSubmit={saljiPodatke}>
+                {uspjesnoUneseno && <h4>Uspješno unesena!</h4>}
                 <div className="unos-forma-div">
                     <label>
                         Ime:
@@ -58,9 +68,12 @@ function UnosForma(props) {
                 </div>
 
                 <div className="unos-forma-div">
-                    <label>
-                        Vrsta:
-                        <input type="text" name="vrsta" value={formaPodaci.vrsta} onChange={promjenaUlaza} required />
+                    <label>Vrsta:    
+                        <select name="vrsta" onChange={promjenaUlaza}>Odaberi vrstu
+                        {vrste.map(vrsta => (
+                            <option key={vrsta} value={vrsta}>{vrsta}</option>
+                        ))}
+                        </select>
                     </label>
                 </div>
 
@@ -83,7 +96,7 @@ function UnosForma(props) {
                 <div className="unos-forma-div">
                     <label>
                         Opis:
-                        <input type="text" name="opis" value={formaPodaci.opis} onChange={promjenaUlaza} required />
+                        <input type="text" name="opis" value={formaPodaci.opis} onChange={promjenaUlaza} />
                     </label>
                 </div>
 
@@ -109,7 +122,8 @@ function UnosForma(props) {
 
             
 
-                <button type='submit'>Nova životinja</button>
+            <button type='submit'>Nova životinja</button>
+            
             </form>
     )
 
