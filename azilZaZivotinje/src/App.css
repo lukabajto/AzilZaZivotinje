@@ -1,0 +1,286 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  height: 80px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    top: 80px;
+    left: -100%;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  left: 0;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.switch p {
+  margin-right: 1rem;
+}
+
+.switch .slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin: 0 1rem;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #fff;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input[type="checkbox"]:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+
+.switchText{
+  text-decoration: none;
+  color: wheat;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+.wrapper {
+  display: flex;
+}
+
+.vertical-div {
+  flex: 1 0 35%; /* flex-grow, flex-shrink, flex-basis */
+  height: 300px;
+  background-color: #eee;
+  width: 35%;
+}
+
+.horizontal-div {
+  flex: 1 0 65%; /* flex-grow, flex-shrink, flex-basis */
+  height: 300px;
+  background-color: #ccc;
+  width: 65%;
+  margin-left: 20px;
+}
+
+.top {
+  margin-right: 10px;
+}
+
+.bottom {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.verticalText{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+h4 { 
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+select {
+  display: block;
+}
+
+select option {
+  display: block;
+}
+
+.unos-forma-div {
+  margin-bottom: 10px;
+}
+
+.unos-forma-div label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.unos-forma-div input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.select-div {
+  margin-bottom: 10px;
+  }
+  
+  .select-div label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  }
+  
+  .select-div select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 300px;
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ccc' d='M14.6,5.6l-2.7-2.7c-0.4-0.4-1-0.4-1.4,0l-3.3,3.3L4.7,2.3c-0.4-0.4-1-0.4-1.4,0L1.4,4.9c-0.4,0.4-0.4,1,0,1.4l4.6,4.6c0.4,0.4,1,0.4,1.4,0l4.6-4.6C15,6.5,15,6,14.6,5.6z'/%3E%3C/svg%3E") no-repeat right center/1.5em;
+  cursor: pointer;
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  }
+  
+  .select-div select::-ms-expand {
+  display: none; /* uklanja uobičajeni gumb za širenje u Internet Exploreru */
+  }
+  
+  .select-div select option {
+  color: #000;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border: none;
+  }
+  
+  .select-div select option:checked {
+  background-color: #ccc;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
