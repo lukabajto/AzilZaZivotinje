@@ -5,12 +5,12 @@ function UnosForma(props) {
     const [vrste, postaviVrste] = useState([])
     const [formaPodaci, postaviPodatke] = useState({
         ime: "",
-        vrsta: "",
+        vrsta: vrste[0],
         cip: "",
         godine: "",
         opis: "",
         pregled: "",
-        udomljen: false
+        udomljen: ""
     })
     const [uspjesnoUneseno, postaviTekstUneseno] = useState(false)
 
@@ -38,11 +38,11 @@ function UnosForma(props) {
         return {
             "ime": objekt.ime,
             "vrsta": objekt.vrsta,
-            "cip": objekt.cip,
+            "cip": objekt.cip === "true",
             "godine": objekt.godine,
             "opis": objekt.opis,
             "pregled": objekt.pregled,
-            "udomljen": objekt.udomljen
+            "udomljen": objekt.udomljen === "true"
         }
     }
     
@@ -69,7 +69,7 @@ function UnosForma(props) {
 
                 <div className="unos-forma-div">
                     <label>Vrsta:    
-                        <select name="vrsta" onChange={promjenaUlaza}>Odaberi vrstu
+                        <select name="vrsta" onChange={promjenaUlaza}><option value="">Odaberi vrstu</option>
                         {vrste.map(vrsta => (
                             <option key={vrsta} value={vrsta}>{vrsta}</option>
                         ))}
@@ -79,7 +79,8 @@ function UnosForma(props) {
 
                 <div className="select-div">
                     <label>Čip:
-                        <select name="cip" value={formaPodaci.cip} onChange={promjenaUlaza}>
+                    <select name="cip" value={formaPodaci.cip} onChange={promjenaUlaza}>
+                            <option value="">Odaberi</option>
                             <option value={true}>Da</option>
                             <option value={false}>Ne</option>
                         </select>
@@ -111,6 +112,7 @@ function UnosForma(props) {
                 <div>
                     <label>Udomljen:
                         <select name="udomljen" value={formaPodaci.udomljen} onChange={promjenaUlaza}>
+                            <option value="">Odaberi</option>
                             <option value={true}>Da</option>
                             <option value={false}>Ne</option>
                         </select>

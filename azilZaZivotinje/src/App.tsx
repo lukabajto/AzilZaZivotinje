@@ -9,12 +9,12 @@ import UnosForma from './components/UnosForma.tsx';
 
 function App() {
   useEffect(() => {
-    // Initialize MaterializeCSS dropdown and sidenav components
+    
     M.AutoInit();
   }, []);
 
   const [isAdmin, setIsAdmin] = useState(false);
-  const [displayGeneral, setDisplayGeneral] = useState(false);
+  const [displayGeneral, setDisplayGeneral] = useState(true);
   const [displayPopis, setPopis] = useState(false)
   const [displayUnos, setUnos] = useState(false)
 
