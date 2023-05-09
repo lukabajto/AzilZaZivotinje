@@ -13,6 +13,13 @@
       "datum": "2023-02-17",
       "tekst": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
       "vazno": false
+    },
+    {
+      "naslov": "Međunarodni dan pasa",
+      "datum": "2023-02-16",
+      "tekst": "psum dolor sit amet, consectetur adipiscing elit. Cras faucibus mauris metus, vulputate vulputate neque blandit quis. Nunc ultrices diam ligula, nec commodo purus ullamcorper id. Donec aliquet libero eu tincidunt eleifend. Duis ornare tincidunt nisl quis fringilla. Curabitur bibendum metus mauris, in bibendum lectus vestibulum tristique. Sed in nibh facilisis tortor varius euismod at et lectus. In non congue elit. Donec blandit est consequat, porta tellus eu, placerat odio.",
+      "vazno": "nista",
+      "id": 4
     }
   ],
   "donacije": [

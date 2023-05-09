@@ -5,7 +5,7 @@ import './App.css';
 import Info from "./components/Info.tsx"
 import Popis from './components/Popis.tsx';
 import UnosForma from './components/UnosForma.tsx';
-
+import Obavijesti from './components/Obavijesti.tsx';
 
 function App() {
   useEffect(() => {
@@ -17,24 +17,35 @@ function App() {
   const [displayGeneral, setDisplayGeneral] = useState(true);
   const [displayPopis, setPopis] = useState(false)
   const [displayUnos, setUnos] = useState(false)
+  const [displayObavijesti, setObavijesti] = useState(false)
 
   const handleInfoClick = () => {
     setDisplayGeneral(true);
     setPopis(false);
     setUnos(false);
+    setObavijesti(false);
   };
 
   const handlePopisClick = () => {
     setDisplayGeneral(false);
     setPopis(true);
     setUnos(false);
+    setObavijesti(false);
   };
 
   const handleUnosClick = () => {
     setUnos(true);
     setDisplayGeneral(false);
     setPopis(false);
+    setObavijesti(false);
   }
+
+  const handleObavijestiClick = () => {
+    setObavijesti(true);
+    setDisplayGeneral(false);
+    setPopis(false);
+    setUnos(false);
+  };
 
   const handleSwitch = () => {
     setIsAdmin(!isAdmin);
@@ -51,7 +62,7 @@ function App() {
             <li><a href="#" onClick={handleInfoClick}>Podaci</a></li>
             <li><a href="#" onClick={handlePopisClick}>Popis</a></li>
             <li><a href="#">Donacije</a></li>
-            <li><a href="#">Obavijesti</a></li>
+            <li><a href="#" onClick={handleObavijestiClick}>Obavijesti</a></li>
             <li><a href="#" onClick={handleUnosClick}>Unos</a></li>
           </ul>
           <div className="switch">
@@ -73,7 +84,8 @@ function App() {
       {displayGeneral && <Info />}
       {displayPopis && <Popis isAdmin={isAdmin} />}
       {displayUnos && !isAdmin && <h4>Trebate biti admin za otključati unos.</h4>}
-      {displayUnos && isAdmin && <UnosForma/>}
+      {displayUnos && isAdmin && <UnosForma />}
+      {displayObavijesti && <Obavijesti isAdmin={isAdmin}/>}
       
     </>
   );
