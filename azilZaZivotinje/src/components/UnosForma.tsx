@@ -105,7 +105,7 @@ function UnosForma(props) {
                 <div className="unos-forma-div">
                     <label>
                         Pregled:
-                        <input type="text" name="pregled" value={formaPodaci.pregled} onChange={promjenaUlaza} required />
+                        <input type="date" name="pregled" value={formaPodaci.pregled} onChange={promjenaUlaza} required />
                     </label>
                 </div>
 

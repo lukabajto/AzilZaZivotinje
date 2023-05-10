@@ -17,6 +17,17 @@ function UnosObavijesti({ osvjeziObavijesti, isAdmin }) {
         event.preventDefault();
         console.log(formaPodaciObavijest);
 
+        if (formaPodaciObavijest.naslov.length > 20) {
+            alert("Naslov ne može imati više od 20 znakova!");
+            return;
+        }
+
+        if (formaPodaciObavijest.tekst.length < 10 || formaPodaciObavijest.tekst.length > 200) {
+            alert("Tekst mora imati između 10 i 200 znakova!");
+            return;
+        }
+
+
         const zaSlanjeObavijesti = obradiPodatkeObavijesti(formaPodaciObavijest)
 
         axios.post('http://localhost:3001/obavijesti', zaSlanjeObavijesti)
@@ -52,7 +63,7 @@ function UnosObavijesti({ osvjeziObavijesti, isAdmin }) {
 
     return (
         <form onSubmit={saljiPodatkeObavijesti}>
-            {uspjesnoUneseno && <h4>Uspješno unesena!</h4>}
+            {uspjesnoUneseno && <h5>Uspješno unesena!</h5>}
             <div className="unos-forma-div">
                 <label>Naslov:
                     <input type="text" name="naslov" value={formaPodaciObavijest.naslov} onChange={promjenaUlazaObavijesti} required/>
@@ -61,7 +72,7 @@ function UnosObavijesti({ osvjeziObavijesti, isAdmin }) {
 
             <div className="unos-forma-div">
                 <label>Datum:
-                    <input type="text" name="datum" value={formaPodaciObavijest.datum} onChange={promjenaUlazaObavijesti} required/>
+                    <input type="date" name="datum" value={formaPodaciObavijest.datum} onChange={promjenaUlazaObavijesti} required/>
                 </label>
             </div>
 

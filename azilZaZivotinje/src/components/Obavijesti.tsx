@@ -4,6 +4,7 @@ import OkvirObavijesti from "./OkvirObavijesti";
 import UnosObavijesti from "./UnosObavijesti";
 
 function Obavijesti({isAdmin}) {
+    
     const [obavijesti, postaviObavijesti] = useState([]);
 
     useEffect(() => {
@@ -11,7 +12,7 @@ function Obavijesti({isAdmin}) {
           .get("http://localhost:3001/obavijesti/")
           .then(res => postaviObavijesti(res.data));
     }, []);
-
+    
     async function osvjeziObavijesti() {
         await axios
           .get("http://localhost:3001/obavijesti/")
