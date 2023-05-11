@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import OkvirDonacije from "./OkvirDonacije";
+import UnosDonacije from "./UnosDonacije";
+import UnosDonacijeUser from "./UnosDonacijeUser";
 
-function Donacije() {
+function Donacije({isAdmin}) {
     const [donacije, postaviDonacije] = useState([]);
 
     useEffect(() => {
@@ -11,12 +13,20 @@ function Donacije() {
           .then(res => postaviDonacije(res.data));
     }, []);
 
-
+    async function osvjeziDonacije() {
+        await axios
+          .get("http://localhost:3001/donacije/")
+          .then(res => postaviDonacije(res.data));
+    }
 
     return (
         <div className="donacije">
-            <h4>Popis donacije</h4>
-            <OkvirDonacije donacije={donacije}/>
+            
+            <OkvirDonacije donacije={donacije} osvjeziDonacije={osvjeziDonacije} isAdmin={isAdmin} />
+            <br />
+            {!isAdmin && <UnosDonacijeUser osvjeziDonacije={osvjeziDonacije}/>}
+            <br />
+            {isAdmin && <UnosDonacije osvjeziDonacije={osvjeziDonacije}/>}
         </div>
     )
 

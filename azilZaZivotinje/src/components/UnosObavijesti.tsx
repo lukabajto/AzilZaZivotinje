@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 
 
 function UnosObavijesti({ osvjeziObavijesti, isAdmin }) {
@@ -34,6 +33,12 @@ function UnosObavijesti({ osvjeziObavijesti, isAdmin }) {
             .then(rez => {
                 osvjeziObavijesti()
                 postaviTekstUneseno(true);
+                postaviPodatkeObavijest({
+                    naslov: "",
+                    datum: "",
+                    tekst: "",
+                    vazno: ""
+                });
             })
     }
 

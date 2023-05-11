@@ -31,18 +31,39 @@
       "opis": "Suha hrana za pse - 10kg"
     },
     {
-      "id": 2,
+      "id": 3,
+      "kategorija": "nudi",
+      "tip": "Ostalo",
+      "vrijednost": 25,
+      "opis": "Kavez za srednje papige"
+    },
+    {
+      "id": 4,
+      "kategorija": "trazi",
+      "tip": "Ostalo",
+      "vrijednost": 25,
+      "opis": "Kavez za srednje papige"
+    },
+    {
+      "id": 7,
       "kategorija": "trazi",
       "tip": "Igračke",
       "vrijednost": 15,
       "opis": "Grebalica za mačke"
     },
     {
-      "id": 3,
-      "kategorija": "nudi",
+      "tip": "Ljekovi",
+      "vrijednost": "1010",
+      "opis": "Lijek protiv buha",
+      "kategorija": "donirano",
+      "id": 8
+    },
+    {
       "tip": "Ostalo",
-      "vrijednost": 25,
-      "opis": "Kavez za srednje papige"
+      "vrijednost": "123",
+      "opis": "Pregled jednog psa u veterinara",
+      "kategorija": "nudi",
+      "id": 9
     }
   ],
   "zivotinje": [
@@ -86,5 +107,12 @@
     "mačka",
     "ptica",
     "hrčak"
+  ],
+  "poruke": [
+    {
+      "naslovPoruke": "Pomoć pri korištenju",
+      "tekstPoruke": "Pozdrav. Molim Vas mi objasnite kako se koristi vaša stranica.",
+      "emailAdresa": "luka.bajto@gmail.com"
+    }
   ]
 }

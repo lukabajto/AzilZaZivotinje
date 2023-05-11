@@ -100,7 +100,7 @@ function App() {
       {displayUnos && !isAdmin && <h4>Trebate biti admin za otključati unos.</h4>}
       {displayUnos && isAdmin && <UnosForma />}
       {displayObavijesti && <Obavijesti isAdmin={isAdmin} />}
-      {displayDonacije && <Donacije/>}
+      {displayDonacije && <Donacije isAdmin={isAdmin}/>}
       
     </>
   );
