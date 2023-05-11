@@ -67,17 +67,10 @@
     },
     {
       "id": 7,
-      "kategorija": "trazi",
-      "tip": "Ljekovi",
-      "vrijednost": "1010",
-      "opis": "Lijek protiv buha"
-    },
-    {
-      "id": 8,
-      "kategorija": "trazi",
+      "kategorija": "donirano",
       "tip": "Hrana",
-      "vrijednost": 25,
-      "opis": "Suha hrana za pse - 10kg"
+      "vrijednost": "10",
+      "opis": "Šunka"
     }
   ],
   "zivotinje": [

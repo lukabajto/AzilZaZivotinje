@@ -18,7 +18,7 @@ function OkvirDonacije({donacije, osvjeziDonacije, isAdmin}) {
         const donacija = donacije.find(d => d.id === id);
         console.log(donacija)
         const novaDonacija = {
-          id: donacije.length + 1, // generiranje novog ID-a
+          id: donacije.length + 5, // generiranje novog ID-a
           kategorija: "trazi",
           tip: donacija.tip,
           vrijednost: donacija.vrijednost,
