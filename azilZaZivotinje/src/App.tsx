@@ -6,6 +6,7 @@ import Info from "./components/Info.tsx"
 import Popis from './components/Popis.tsx';
 import UnosForma from './components/UnosForma.tsx';
 import Obavijesti from './components/Obavijesti.tsx';
+import Donacije from './components/Donacije.tsx';
 
 function App() {
   useEffect(() => {
@@ -18,12 +19,14 @@ function App() {
   const [displayPopis, setPopis] = useState(false)
   const [displayUnos, setUnos] = useState(false)
   const [displayObavijesti, setObavijesti] = useState(false)
+  const [displayDonacije, setDonacije] = useState(false)
 
   const handleInfoClick = () => {
     setDisplayGeneral(true);
     setPopis(false);
     setUnos(false);
     setObavijesti(false);
+    setDonacije(false);
   };
 
   const handlePopisClick = () => {
@@ -31,6 +34,7 @@ function App() {
     setPopis(true);
     setUnos(false);
     setObavijesti(false);
+    setDonacije(false);
   };
 
   const handleUnosClick = () => {
@@ -38,6 +42,7 @@ function App() {
     setDisplayGeneral(false);
     setPopis(false);
     setObavijesti(false);
+    setDonacije(false);
   }
 
   const handleObavijestiClick = () => {
@@ -45,6 +50,15 @@ function App() {
     setDisplayGeneral(false);
     setPopis(false);
     setUnos(false);
+    setDonacije(false);
+  };
+
+  const handleDonacijeClick = () => {
+    setObavijesti(false);
+    setDisplayGeneral(false);
+    setPopis(false);
+    setUnos(false);
+    setDonacije(true);
   };
 
   const handleSwitch = () => {
@@ -61,7 +75,7 @@ function App() {
           <ul className="nav-links">
             <li><a href="#" onClick={handleInfoClick}>Podaci</a></li>
             <li><a href="#" onClick={handlePopisClick}>Popis</a></li>
-            <li><a href="#">Donacije</a></li>
+            <li><a href="#" onClick={handleDonacijeClick}>Donacije</a></li>
             <li><a href="#" onClick={handleObavijestiClick}>Obavijesti</a></li>
             <li><a href="#" onClick={handleUnosClick}>Unos</a></li>
           </ul>
@@ -85,7 +99,8 @@ function App() {
       {displayPopis && <Popis isAdmin={isAdmin} />}
       {displayUnos && !isAdmin && <h4>Trebate biti admin za otključati unos.</h4>}
       {displayUnos && isAdmin && <UnosForma />}
-      {displayObavijesti && <Obavijesti isAdmin={isAdmin}/>}
+      {displayObavijesti && <Obavijesti isAdmin={isAdmin} />}
+      {displayDonacije && <Donacije/>}
       
     </>
   );
