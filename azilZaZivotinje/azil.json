@@ -110,9 +110,16 @@
   ],
   "poruke": [
     {
+      "id": 1,
       "naslovPoruke": "Pomoć pri korištenju",
       "tekstPoruke": "Pozdrav. Molim Vas mi objasnite kako se koristi vaša stranica.",
       "emailAdresa": "luka.bajto@gmail.com"
+    },
+    {
+      "naslovPoruke": "a",
+      "tekstPoruke": "a",
+      "emailAdresa": "byzombie74@gmail.com",
+      "id": 2
     }
   ]
 }
