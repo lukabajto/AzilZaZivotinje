@@ -13,5 +13,6 @@ npm install materialize-css
 
 Te naposljetku u četvrtom terminalu pokrenit JSON server:
 npm install -g json-server
+
 json-server --watch azil.json --port 3001
 
