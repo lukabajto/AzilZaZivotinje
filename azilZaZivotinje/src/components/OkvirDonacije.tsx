@@ -26,7 +26,7 @@ function OkvirDonacije({donacije, osvjeziDonacije, isAdmin}) {
         };
         console.log(novaDonacija)
         axios
-          .post("http://localhost:3001/donacije", novaDonacija, { headers: { 'Content-Type': 'application/json' } })
+          .post("http://localhost:3001/donacije", novaDonacija)
           .then(() => osvjeziDonacije())
           .catch(err => console.log(err));
       }
