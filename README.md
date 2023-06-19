@@ -1,5 +1,6 @@
 # AzilZaZivotinje
-Ovo je repozitorij za završni projekt na JuniorDev tečaju u Splitu. Prije pokretanja stranice, ne zaboravite instalirati JSON server, Axios i MaterializeCSS. 
+Ovo je repozitorij za završni projekt na JuniorDev tečaju u Splitu. Ja sam učenik trećeg razreda opće gimnazije.
+Prije pokretanja stranice, ne zaboravite instalirati JSON server, Axios i MaterializeCSS. 
 
 
 Prije korištenja same aplikacije, u svoj prvi bash terminal napišite:
