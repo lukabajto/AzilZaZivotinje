@@ -64,13 +64,6 @@
       "opis": "Pregled jednog psa u veterinara",
       "kategorija": "nudi",
       "id": 6
-    },
-    {
-      "id": 7,
-      "kategorija": "donirano",
-      "tip": "Hrana",
-      "vrijednost": "10",
-      "opis": "Šunka"
     }
   ],
   "zivotinje": [
@@ -88,11 +81,11 @@
       "id": 2,
       "ime": "Snoopy",
       "vrsta": "pas",
-      "cip": true,
+      "cip": false,
       "godine": 50,
       "opis": "Više od običnog psa",
       "pregled": "2000-02-13",
-      "udomljen": false
+      "udomljen": true
     },
     {
       "ime": "Oddie",
@@ -103,6 +96,16 @@
       "pregled": "2022-02-12",
       "udomljen": true,
       "id": 3
+    },
+    {
+      "ime": "Izzy",
+      "vrsta": "pas",
+      "cip": false,
+      "godine": "7",
+      "opis": "Maltezer",
+      "pregled": "2023-04-13",
+      "udomljen": false,
+      "id": 4
     }
   ],
   "udomljen": [
@@ -127,6 +130,12 @@
       "tekstPoruke": "a",
       "emailAdresa": "byzombie74@gmail.com",
       "id": 2
+    },
+    {
+      "naslovPoruke": "Laaaa",
+      "tekstPoruke": "aaaaa",
+      "emailAdresa": "luka.bajto@gmail.com",
+      "id": 3
     }
   ]
 }
