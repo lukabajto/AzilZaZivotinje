@@ -18,7 +18,8 @@ npm install axios
 npm install materialize-css
 
 Te naposljetku u trećem bash terminalu pokrenit JSON server:
-ce azilZaZivotinje
+
+cd azilZaZivotinje
 
 npm install -g json-server
 
